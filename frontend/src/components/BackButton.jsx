@@ -1,11 +1,12 @@
 import { FaArrowCircleLeft } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const BackButton = ({ url }) => {
+const BackButton = () => {
+  const navigate = useNavigate();
   return (
-    <Link to={url} className='btn btn-reverse btn-black'>
+    <button className='btn btn-reverse btn-back' onClick={() => navigate(-1)}>
       <FaArrowCircleLeft /> Back
-    </Link>
+    </button>
   );
 };
 
